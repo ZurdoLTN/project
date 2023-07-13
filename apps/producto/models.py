@@ -11,3 +11,6 @@ class Producto(models.Model):
     descripcion = models.TextField()
     precio = models.IntegerField()
     categoria_id = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return self.nombre
