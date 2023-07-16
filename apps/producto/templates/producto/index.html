@@ -1,0 +1,31 @@
+{% extends 'Home/base.html' %}
+
+{% block CONTENIDO %}
+<section class="py-5">
+    <div class="container px-5 mb-5">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Productos</span></h1>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-11 col-xl-9 col-xxl-8">
+                {% for productos in producto %}
+                    <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                        <div class="card-body p-0">
+                            <div class="d-flex align-items-center">
+                                <div class="p-5">
+                                    <h2 class="fw-bolder">{{ productos.nombre }}</h2>
+                                    <p>{{ productos.descripcion }}</p>
+                                    <p>${{ productos.precio }}</p>
+                                    <a href="https://wa.me/543534081664" target="_blank"><button>Contactanos para tu compra</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                 <a href="{% url 'producto:ingresar_productos' %}"><button>Ingresar Productos</button></a>
+                                
+{% endblock CONTENIDO %}
+
+        
+
+
