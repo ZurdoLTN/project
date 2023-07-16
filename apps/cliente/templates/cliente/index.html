@@ -1,0 +1,15 @@
+{% extends 'Home/base.html' %}
+
+{% block CONTENIDO %}
+    <div class="text-center">
+        <h1>CLIENTES</h1>
+        {% for clientes in cliente %}
+            <p class="text-bg-dark ">{{ clientes.nombre }} {{ clientes.apellido }}</p>
+            <p>Nacimiento: {{ clientes.nacimiento }}</p>
+            <p>Nacionalidad: {{ clientes.pais_origen_id }}</p>
+            <p>Arte Marcial: {{ clientes.arte_marcial }}</p>
+        {% endfor %}
+        <p> <a href="{% url 'cliente:crear_cliente' %}"><button>Sumate a nuestra lista de clientes</button></a></p>
+    </div>
+    
+{% endblock CONTENIDO %}
